@@ -41,6 +41,7 @@ body{
         border-radius: 25px;
         background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(15px);
+        box-sizing: border-box;
         // -webkit-box-shadow: 0px 0px 24px 23px rgba(156, 20, 76, 0.2);
         // -moz-box-shadow: 0px 0px 24px 23px rgba(156, 20, 76, 0.2);
         // box-shadow: 0px 0px 24px 23px rgba(156, 20, 76, 0.2);
@@ -75,6 +76,7 @@ body{
                 border: none;
                 border-radius: 10px;
                 padding-left: 15px;
+                box-sizing: border-box;
                 &:focus-visible{
                     border: none !important;
                     outline: none;
@@ -102,7 +104,6 @@ body{
             &-deg,
             &-feelslike,
             &-wind{
-                
                 font-size: 2em;
                 font-weight: 600;
                 line-height: 120%;
@@ -122,11 +123,51 @@ body{
                 font-weight: 600;
                 line-height: 120%;
                 color: #cbd5e2;
-                width: 215px;
+                width: 265px;
             }
-            
+            &-icon{
+                width: 64px;
+                height: 64px;
+            }
             &--show{
                 opacity: 1;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .weather{
+        &__wrap{
+            width: 100%;
+        }
+        &__form{
+            &-fields{
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+@media (max-width:565px){
+    .weather{
+        &__form{
+            &-fields{
+                &-city{
+                    width:265px;
+                }
+            }
+            &-info{
+                &-detail{
+                    font-size: 1.5em;
+                }
+                &-title{
+                    width: 215px;
+                }
+                &-deg,&-feelslike,&-wind{
+                    font-size: 1em;
+                    flex-shrink: 0;
+                }
             }
         }
     }

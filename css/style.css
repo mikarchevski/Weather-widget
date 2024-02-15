@@ -36,7 +36,8 @@ body {
   border: none;
   border-radius: 25px;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px); }
+  backdrop-filter: blur(15px);
+  box-sizing: border-box; }
 .weather__title {
   display: block;
   position: relative;
@@ -61,7 +62,8 @@ body {
     height: 50px;
     border: none;
     border-radius: 10px;
-    padding-left: 15px; }
+    padding-left: 15px;
+    box-sizing: border-box; }
     .weather__form-fields-city:focus-visible {
       border: none !important;
       outline: none; }
@@ -99,8 +101,27 @@ body {
     font-weight: 600;
     line-height: 120%;
     color: #cbd5e2;
-    width: 215px; }
+    width: 265px; }
+  .weather__form-info-icon {
+    width: 64px;
+    height: 64px; }
   .weather__form-info--show {
     opacity: 1; }
+
+@media (max-width: 768px) {
+  .weather__wrap {
+    width: 100%; }
+  .weather__form-fields {
+    flex-direction: column; } }
+@media (max-width: 565px) {
+  .weather__form-fields-city {
+    width: 265px; }
+  .weather__form-info-detail {
+    font-size: 1.5em; }
+  .weather__form-info-title {
+    width: 215px; }
+  .weather__form-info-deg, .weather__form-info-feelslike, .weather__form-info-wind {
+    font-size: 1em;
+    flex-shrink: 0; } }
 
 /*# sourceMappingURL=style.css.map */
